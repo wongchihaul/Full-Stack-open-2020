@@ -1,0 +1,16 @@
+note over browser:
+user texted "Joey doesn't share food" in the textarea 
+and then pressed the submit button
+end note
+
+note over browser:
+browser executes the event handler
+that renders notes to display
+end note
+
+browser->server: HTTP POST https://studies.cs.helsinki.fi/exampleapp/new_note
+browser->server: {content:"Joey doesn't share food", date: "2021-02-03"}
+server-->browser: HTTP status code 201
+server-->browser: {"message":"note created"}
+
+
